@@ -13,8 +13,8 @@ Author URI: https://github.com/digitaldonkey
 Contributors: digitaldonkey, hubrik, vtowel, yaniiliev, nicolapeluchetti, jbutkus, lpawlik, bangelov
 Donate link: https://www.paypal.com/donate/?hosted_button_id=ZNWEQRQNJBTE6
 Text Domain: open-source-event-calendar
-Stable Tag: 1.1.12
-Version: 1.1.12
+Stable Tag: 1.1.13
+Version: 1.1.13
 
 An event calendar with native iCal / ICS import and export
 
@@ -205,6 +205,9 @@ I may also provide paid support.
 9. Schema.org/Event data validator
 
 == Changelog ==
+
+= 1.1.13 =
+WP 7.1 compatibility
 
 = 1.1.11 =
 Fix: Json displayed instead of coast #52

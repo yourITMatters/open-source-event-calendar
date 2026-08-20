@@ -1,3 +1,6 @@
+= 1.1.13 =
+WP 7.1 compatibility
+
 = 1.1.11 =
 Fix: Json displayed instead of coast #52
 
