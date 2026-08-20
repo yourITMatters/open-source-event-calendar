@@ -3,7 +3,7 @@
 Tags: iCal, ics, ical importer, events calendar, open-source-event-calendar
 Requires PHP: 8.2
 Requires at least: 6.7
-Tested up to: 7.0
+Tested up to: 7.1
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Plugin URI: https://github.com/digitaldonkey/open-source-event-calendar
@@ -13,8 +13,8 @@ Author URI: https://github.com/digitaldonkey
 Contributors: digitaldonkey, hubrik, vtowel, yaniiliev, nicolapeluchetti, jbutkus, lpawlik, bangelov
 Donate link: https://www.paypal.com/donate/?hosted_button_id=ZNWEQRQNJBTE6
 Text Domain: open-source-event-calendar
-Stable Tag: 1.1.11
-Version: 1.1.11
+Stable Tag: 1.1.12
+Version: 1.1.12
 
 An event calendar with native iCal / ICS import and export
 
