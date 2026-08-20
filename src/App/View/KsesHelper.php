@@ -248,6 +248,7 @@ class KsesHelper extends OsecBaseClass
                     'data-*' => true,
                     'id' => true,
                     'style' => true,
+                    'popover' => true,
                 ],
                 'em' => [
                     'class' => true,
@@ -361,7 +362,8 @@ class KsesHelper extends OsecBaseClass
                     'id' => true,
                     'style' => true,
                     'title' => true,
-                    'item*'      => true,
+                    'item*' => true,
+                    'popover' => true,
                 ],
                 'strong' => [
                 ],
