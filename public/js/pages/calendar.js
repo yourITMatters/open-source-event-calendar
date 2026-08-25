@@ -401,13 +401,33 @@ timely.define("domReady", [], function () {
     var t = function (t) {
         t.preventDefault();
         var n = e("body"), r = e("html"), i = e(this).closest(".ai1ec-calendar").html(), s = n.html();
-        s = s.replace(/<script.*?>([\s\S]*?)<\/script>/gmi, ""), n.empty(), n.addClass("timely"), r.addClass("ai1ec-print"), n.html(i), e("span").click(function () {
-            return !1
-        }), e(".ai1ec-agenda-view a").each(function () {
-            e(this).data("href", e(this).attr("href")), e(this).attr("href", "#")
-        }), window.print(), e(".ai1ec-agenda-view a").each(function () {
-            e(this).attr("href", e(this).data("href")), e(this).data("href", "")
-        }), n.removeClass("timely"), r.removeClass("ai1ec-print"), n.html(s)
+        s = s.replace(/<script.*?>([\s\S]*?)<\/script>/gmi, "");
+        n.empty();
+        n.addClass("timely");
+        r.addClass("ai1ec-print");
+        n.html(i);
+        var o = e.trim(e(".ai1ec-calendar-title:first").text() || e(".ai1ec-minical-trigger:first").text() || "");
+        if (o) {
+            var a = e("<h1/>", {"class": "ai1ec-print-calendar-title", text: o});
+            var l = e("#osec-calendar-view-container,.osec-calendar-view-container,#osec-calendar-view,.osec-calendar-view,.ai1ec-month-view,.ai1ec-week-view,.ai1ec-oneday-view,.ai1ec-agenda-view").first();
+            l.length ? l.before(a) : n.prepend(a);
+        }
+        n.prepend('<style id="osec-print-cleanup">@media print{@page{size:landscape;margin:.35in}.ai1ec-print body,.ai1ec-print .timely{background:#fff!important;color:#000!important}.ai1ec-print a[href]::after,.ai1ec-print a[href]::before{content:""!important;display:none!important}.ai1ec-print .ai1ec-print-calendar-title{display:block!important;text-align:center!important;font-size:18pt!important;line-height:1.15!important;font-weight:900!important;color:#000!important;margin:0 0 .15in!important;padding:0!important}.ai1ec-print .ai1ec-clearfix,.ai1ec-print .ai1ec-btn-toolbar,.ai1ec-print .ai1ec-calendar-toolbar,.ai1ec-print .ai1ec-pagination,.ai1ec-print .ai1ec-views-dropdown,.ai1ec-print .ai1ec-subscribe-container,.ai1ec-print .ai1ec-filters,.ai1ec-print .ai1ec-search,.ai1ec-print .ai1ec-popover,.ai1ec-print .ai1ec-popup{display:none!important}.ai1ec-print .osec-calendar-view-container,.ai1ec-print #osec-calendar-view,.ai1ec-print .osec-calendar-view,.ai1ec-print .ai1ec-calendar,.ai1ec-print .ai1ec-month-view{width:100%!important;max-width:none!important;overflow:visible!important}.ai1ec-print .ai1ec-month-view{table-layout:fixed!important;border-collapse:collapse!important}.ai1ec-print .ai1ec-month-view th,.ai1ec-print .ai1ec-month-view td{font-size:8pt!important;line-height:1.12!important;vertical-align:top!important;color:#000!important}.ai1ec-print .ai1ec-date,.ai1ec-print .ai1ec-date a{font-weight:800!important;color:#000!important;text-decoration:none!important}.ai1ec-print .ai1ec-event,.ai1ec-print .ai1ec-event-title,.ai1ec-print .ai1ec-event-time{font-size:7.5pt!important;line-height:1.1!important;color:#000!important;text-shadow:none!important;box-shadow:none!important}.ai1ec-print .ai1ec-event-container,.ai1ec-print a{text-decoration:none!important;color:#000!important}}</style>');
+        e("span").click(function () { return !1 });
+        e(".ai1ec-popover,.ai1ec-popup").remove();
+        e("a[href]").each(function () {
+            e(this).data("href", e(this).attr("href"));
+            e(this).removeAttr("href");
+        });
+        window.print();
+        e("a").each(function () {
+            var t = e(this).data("href");
+            t && e(this).attr("href", t);
+            e(this).data("href", "");
+        });
+        n.removeClass("timely");
+        r.removeClass("ai1ec-print");
+        n.html(s);
     };
     return {handle_click_on_print_button: t}
 }), timely.define("scripts/calendar/agenda_view", ["jquery_timely"], function (e) {
