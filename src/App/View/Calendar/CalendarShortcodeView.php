@@ -41,8 +41,8 @@ class CalendarShortcodeView extends OsecBaseClass
         }
 
         $view               = $default_view;
-        $_events_categories = [];
-        $_events_tags = [];
+        $_osec_events_categories = [];
+        $_osec_events_tags = [];
         $post_ids = [];
 
         if (isset($atts['view'])) {
@@ -129,8 +129,8 @@ class CalendarShortcodeView extends OsecBaseClass
         $request_type = $this->app->settings
             ->get('osec_use_frontend_rendering') ? 'json' : 'jsonp';
         $query        = [
-            'cat_ids'      => implode(',', $_events_categories),
-            'tag_ids'      => implode(',', $_events_tags),
+            'cat_ids'      => implode(',', $_osec_events_categories),
+            'tag_ids'      => implode(',', $_osec_events_tags),
             'post_ids'     => implode(',', $post_ids),
             'action'       => $view,
             'request_type' => $request_type,
